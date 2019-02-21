@@ -13,9 +13,9 @@ def update_system(acc, pos, vel, time1, time2):
     return newPos, newVel
 
 def print_system(pos, time, vel):
-    print("Time: ", time)
-    print("Position: ", pos)
-    print("Velocity: ", vel)
+    print("Time: ", round(time, 3))
+    print("Position: ", round(pos, 3))
+    print("Velocity: ", round(vel, 3))
 
 #initial conditions
 initial_position = 0.5236
