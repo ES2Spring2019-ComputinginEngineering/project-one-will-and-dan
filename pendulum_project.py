@@ -30,7 +30,7 @@ print_system(theta[0], time[0], angVel[0])
 
 i = 1
 while i < len(time):
-    angAcc = -9.8 * (math.cos(math.pi/2 - theta[i-1])/0.30
+    angAcc = -9.8 * (math.cos(math.pi/2 - theta[i-1])/0.30)
     newPos, newVel = update_system(angAcc, theta[i-1], angVel[i-1], time[i-1], time[i])
     theta.append(newPos)
     angVel.append(newVel)
