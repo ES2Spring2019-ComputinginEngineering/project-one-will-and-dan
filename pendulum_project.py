@@ -1,4 +1,5 @@
 #import microbit
+import matplotlib.pyplot as plt
 import math
 import numpy as np
 
@@ -37,3 +38,4 @@ while i < len(time):
     print_system(theta[i], time[i], angVel[i])
     i += 1
 
+plt.subplot(3,1,1)
