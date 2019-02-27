@@ -57,7 +57,7 @@ plt.xlim((0, 20)) # set x range to -1 to 8
 plt.grid()
 
 plt.subplot(3,1,3)
-plt.plot(time, angAcc, 'ro--') 
+plt.plot(time, angAcc, 'r--') 
 plt.xlabel('Time (seconds)')
 plt.ylabel('Acceleration (m/s^2)')
 plt.title('Acceleration vs Time')
