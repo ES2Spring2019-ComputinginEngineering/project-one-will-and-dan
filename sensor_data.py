@@ -14,8 +14,10 @@ f = open(filename, 'w')
 
 time0 = microbit.running_time()
 
+microbit.sleep(2000)
+
 while True:
-    microbit.sleep(2000)
+    microbit.sleep(200)
 
     time1 = microbit.running_time()
 
