@@ -1,4 +1,5 @@
-#import microbit
+#Will and Daniel
+
 import matplotlib.pyplot as plt
 import math
 import numpy as np
@@ -29,7 +30,7 @@ angAcc = [0]
 time = np.linspace(0, 10, 10000)
 print_system(theta[0], time[0], angVel[0])
 
-
+#the while loop is used to append the list values
 i = 1
 while i < len(time):
     newAcc = -9.8 * (math.cos(math.pi/2 - theta[i-1])/0.30)
@@ -47,7 +48,7 @@ plt.plot(time, theta, 'r--')
 plt.xlabel('Time (seconds)')
 plt.ylabel('Position (m)')
 plt.title('Position vs Time')
-plt.xlim((0, 20)) # set x range to -1 to 8
+plt.xlim((0, 10)) # set x range to -1 to 8
 plt.grid()
 
 plt.subplot(3,1,2)
@@ -55,7 +56,7 @@ plt.plot(time, angVel, 'r--')
 plt.xlabel('Time (seconds)')
 plt.ylabel('Velocity (m/s)')
 plt.title('Velocity vs Time')
-plt.xlim((0, 20)) # set x range to -1 to 8
+plt.xlim((0, 10)) # set x range to -1 to 8
 plt.grid()
 
 plt.subplot(3,1,3)
@@ -63,7 +64,7 @@ plt.plot(time, angAcc, 'r--')
 plt.xlabel('Time (seconds)')
 plt.ylabel('Acceleration (m/s^2)')
 plt.title('Acceleration vs Time')
-plt.xlim((0, 20)) # set x range to -1 to 8
+plt.xlim((0, 10)) # set x range to -1 to 8
 plt.grid()
 plt.tight_layout()
 plt.show()
