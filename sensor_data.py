@@ -3,10 +3,6 @@
 
 import microbit
 import random as r
-#import os
-
-#cwd = os.getcwd()
-#print(cwd)
 
 filename = "data_" + str(r.randint(1, 999)) + ".txt"
 
