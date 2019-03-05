@@ -12,12 +12,13 @@ time0 = microbit.running_time()
 
 microbit.sleep(2000)
 
-while True:
+elapsed_time = 0
+while elapsed_time <= 15:
     microbit.sleep(200)
 
     time1 = microbit.running_time()
 
-    elapsed_time = time1 - time0
+    elapsed_time = (time1 - time0)/1000
 
     x = (microbit.accelerometer.get_x())
 
