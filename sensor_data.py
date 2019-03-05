@@ -29,6 +29,6 @@ while True:
 
     z = (microbit.accelerometer.get_z())
 
-    accel =  str(elapsed_time) + "\t" + str(x) + "\t" + str(y) + "\t" + str(z) + "\n"
+    accel =  str(elapsed_time) + "\t" + str(x) + "\t" + str(y) + "\t" + str(z) + "\r\n"
 
     f.write(accel)
