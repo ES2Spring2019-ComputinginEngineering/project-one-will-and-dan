@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*-
 """
 Created on Mon Mar  4 15:30:50 2019
 
-@author: william
+@author: William Reid and Daniel Nguyen
 Overview: The purpose of this program is to take real world data from the
 microbit and graph it.
-"""
+""" 
+
 import math
 import matplotlib.pyplot as plt
 

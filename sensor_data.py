@@ -13,6 +13,7 @@ time0 = microbit.running_time()
 microbit.sleep(2000)
 
 elapsed_time = 0
+
 while elapsed_time <= 15:
     microbit.sleep(200)
 
