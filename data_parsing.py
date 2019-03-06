@@ -25,5 +25,16 @@ for line in fin:
     angle.append(math.atan(int(line.split("\t")[1])/int(line.split("\t")[2])))
     
 plt.figure()
+plt.ylabel('Position')
+plt.xlabel('Time (s)')
+plt.title('Position vs Time')
 plt.plot(time, angle, 'k-')
-plt.show()    
+plt.show()
+
+plt.figure()
+plt.ylabel('Acceleration')
+plt.xlabel('Time (s)')
+plt.title('X Acceleration vs. Time')
+plt.plot(time, accX, 'k-')
+plt.show()
+   
