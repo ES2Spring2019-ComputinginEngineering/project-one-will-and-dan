@@ -3,6 +3,8 @@
 Created on Mon Mar  4 15:30:50 2019
 
 @author: william
+Overview: The purpose of this program is to take real world data from the
+microbit and graph it.
 """
 import math
 import matplotlib.pyplot as plt
@@ -25,9 +27,9 @@ for line in fin:
     angle.append(math.atan(int(line.split("\t")[1])/int(line.split("\t")[2])))
     
 plt.figure()
-plt.ylabel('Position')
+plt.ylabel('Theta')
 plt.xlabel('Time (s)')
-plt.title('Position vs Time')
+plt.title('Theta vs Time')
 plt.plot(time, angle, 'k-')
 plt.show()
 
@@ -38,3 +40,6 @@ plt.title('X Acceleration vs. Time')
 plt.plot(time, accX, 'k-')
 plt.show()
    
+
+
+
