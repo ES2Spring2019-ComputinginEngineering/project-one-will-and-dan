@@ -9,7 +9,7 @@ microbit and graph it.
 import math
 import matplotlib.pyplot as plt
 
-fin = open("data_535.txt")
+fin = open("data_494.txt")
 
 list_lines = []
 time = []
