@@ -4,7 +4,10 @@ Pendulum Project: Simulating and gathering real data to analyse the properties o
 
 ## Instructions
 
-Describe how to use your code.
+For the simulation part, run "pendulum_project.py" in Spyder, which produces plots that can be analysed. 
+
+For the data collection part, run "data_parsing.py" in Spyder, which produces plots that can be analysed.
+
 
 ## How to format your readme
 
