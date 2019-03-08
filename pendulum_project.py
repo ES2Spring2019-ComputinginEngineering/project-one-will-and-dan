@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 import math
 import numpy as np
+import scipy.signal as sig
 
 #length of the pendulum is 30 cm
 #acceleration due to gravity is 9.8 m/s^2
@@ -33,7 +34,7 @@ print_system(theta[0], time[0], angVel[0])
 #the while loop is used to append the list values
 i = 1
 while i < len(time):
-    newAcc = -9.8 * (math.cos(math.pi/2 - theta[i-1])/0.30)
+    newAcc = -9.8 * (math.cos(math.pi/2 - theta[i-1])/0.4)
     newPos, newVel = update_system(newAcc, theta[i-1], angVel[i-1], time[i-1], time[i])
     theta.append(newPos)
     angVel.append(newVel)
@@ -41,10 +42,15 @@ while i < len(time):
     print_system(theta[i], time[i], angVel[i])
     i += 1
 
+#Find peaks of each wave
+p_pks, _ = sig.find_peaks(theta)
+v_pks, _ = sig.find_peaks(angVel)
+a_pks, _ = sig.find_peaks(angAcc)
+
+#Creates the graphs
 plt.figure(figsize=(4,6))
 plt.subplot(3,1,1)
 plt.plot(time, theta, 'r--')
-
 plt.xlabel('Time (seconds)')
 plt.ylabel('Position (m)')
 plt.title('Position vs Time')
@@ -68,3 +74,28 @@ plt.xlim((0, 10)) # set x range to -1 to 8
 plt.grid()
 plt.tight_layout()
 plt.show()
+
+# We kept getting a TypeError after each time we tried to implement 
+# finding the peaks into the the graph
+
+#Here is a function for calculating the period of the graph
+#given peaks being a list of numbers, this will calculate the average difference between the two peaks, which is the period
+#we would call calc_period(p_pks) to calculate the period
+def calc_period(peaks):
+    average = []
+    for  i in peaks:
+        diff = peaks[i+1] - peaks[i]
+        average.append(diff)
+    
+    i = 0
+    sum = 0
+    while i < average.len():
+        sum += average[i]
+    
+    return sum/average.len()
+    
+    
+    
+    
+    
+    
