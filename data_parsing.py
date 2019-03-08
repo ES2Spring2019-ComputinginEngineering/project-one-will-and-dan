@@ -1,15 +1,14 @@
-"""
-Created on Mon Mar  4 15:30:50 2019
+#William Reid and Daniel Nguyen
+#Pendulum Project: Data Parsing
+#Overview: The purpose of this program is to take real world data from the text file that
+#          the microbit produced in the program sensor_data.py and graph it.
 
-@author: William Reid and Daniel Nguyen
-Overview: The purpose of this program is to take real world data from the
-microbit and graph it.
-""" 
 
 import math
 import matplotlib.pyplot as plt
 import scipy.signal as sig
 
+#Function for calculating the position at each point and graphing the acceleration and position vs. time graphs
 def graph_data(data):
     fin = open(data)
     
@@ -30,7 +29,7 @@ def graph_data(data):
     theta_filt = sig.medfilt(angle)
     accY_filt = sig.medfilt(accY)
         
-    #Finds the peaks of the graphs
+    #Finds the peaks of the each of the graphs
     theta_filt_pks, _ = sig.find_peaks(theta_filt)
     accY_filt_pks, _ = sig.find_peaks(accY_filt)
     theta_pks, _ = sig.find_peaks(angle)
@@ -70,6 +69,7 @@ def graph_data(data):
     plt.show()
 
 #In order to calculate the period, we would call calc_period(theta_pks)
+#Calculates the average period over each peak on a graph
 def calc_period(peaks):
     average = []
     for  i in peaks:

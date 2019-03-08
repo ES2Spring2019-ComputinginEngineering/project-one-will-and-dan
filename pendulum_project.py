@@ -1,4 +1,7 @@
 #Will and Daniel
+#Pendulum Project: Pendulum Simulation 
+#Overview: The purpose of this program is to simulate and graph the position, velocity, and acceleration of a pendulum at a certain length
+#          so we can compare the simulation to the real world example in the program data_parsing.py  
 
 import matplotlib.pyplot as plt
 import math
@@ -11,6 +14,7 @@ import scipy.signal as sig
 #acceleration = g*cos(pi/2 - theta)
 #alpha = a/L
 
+pLength = 0.3       #Variable used to set the pendulum length
 
 def update_system(angAcc, theta, angVel, time1, time2):
     dt = time2 - time1
@@ -34,7 +38,7 @@ print_system(theta[0], time[0], angVel[0])
 #the while loop is used to append the list values
 i = 1
 while i < len(time):
-    newAcc = -9.8 * (math.cos(math.pi/2 - theta[i-1])/0.4)
+    newAcc = -9.8 * (math.cos(math.pi/2 - theta[i-1])/pLength)
     newPos, newVel = update_system(newAcc, theta[i-1], angVel[i-1], time[i-1], time[i])
     theta.append(newPos)
     angVel.append(newVel)
@@ -54,7 +58,7 @@ plt.plot(time, theta, 'r--')
 plt.xlabel('Time (seconds)')
 plt.ylabel('Position (m)')
 plt.title('Position vs Time')
-plt.xlim((0, 10)) # set x range to -1 to 8
+plt.xlim((0, 10)) 
 plt.grid()
 
 plt.subplot(3,1,2)
@@ -62,7 +66,7 @@ plt.plot(time, angVel, 'r--')
 plt.xlabel('Time (seconds)')
 plt.ylabel('Velocity (m/s)')
 plt.title('Velocity vs Time')
-plt.xlim((0, 10)) # set x range to -1 to 8
+plt.xlim((0, 10)) 
 plt.grid()
 
 plt.subplot(3,1,3)
@@ -70,13 +74,13 @@ plt.plot(time, angAcc, 'r--')
 plt.xlabel('Time (seconds)')
 plt.ylabel('Acceleration (m/s^2)')
 plt.title('Acceleration vs Time')
-plt.xlim((0, 10)) # set x range to -1 to 8
+plt.xlim((0, 10))
 plt.grid()
 plt.tight_layout()
 plt.show()
 
 # We kept getting a TypeError after each time we tried to implement 
-# finding the peaks into the the graph
+# finding the peaks into the the graph for both the simulation and real world programs
 
 #Here is a function for calculating the period of the graph
 #given peaks being a list of numbers, this will calculate the average difference between the two peaks, which is the period
@@ -93,9 +97,4 @@ def calc_period(peaks):
         sum += average[i]
     
     return sum/average.len()
-    
-    
-    
-    
-    
-    
+       
